@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using Practise1_Programming;
+using System.Text.Json;
 
 #region Static and Dynamic Arrays
 
@@ -57,4 +58,23 @@ int[] _array2 = (int[])Array.CreateInstance(typeof(int), 5);
 // could be useful to getting rid of deep copies and help to keep clean memory.
 #endregion
 
+#region Operator Overloading
 
+Project project = new()
+{
+    Id = 1
+};
+ProjectTask projectTask = new()
+{
+    Id = 1
+};
+ProjectTask projectTask2 = new()
+{
+    Id = 2
+};
+
+project += projectTask;
+project += projectTask2;
+
+//Console.WriteLine(JsonSerializer.Serialize(project));
+#endregion
